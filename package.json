@@ -1,0 +1,26 @@
+{
+  "name": "weatherapp",
+  "version": "1.0.0",
+  "description": "Basic React app showing weatherforecast",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel src/index.html",
+    "build": "rm -rf ./dist; parcel build ./src/index.html"
+  },
+  "author": "Pierre Charles",
+  "license": "ISC",
+  "dependencies": {
+    "lottie-react-web": "^2.1.4",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-router-dom": "^5.0.0",
+    "sass": "^1.17.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "parcel-bundler": "^1.12.3"
+  }
+}
