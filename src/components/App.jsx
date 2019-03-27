@@ -1,16 +1,21 @@
 import React from 'react'
 
-export default class App extends React.Component {
-  componentDidMount() {
-    const apiCall = `api.openweathermap.org/data/2.5/weather?q=London,uk&appid=${process.env.apiKey}`
-  }
+import Form from './Form'
 
+export default class App extends React.Component {    
+  componentDidMount() {
+    const api_url=`https://api.openweathermap.org/data/2.5/weather?q=Jaffna,LK&appid=${process.env.apiKey}&units=metric`
+      
+    fetch(api_url)
+    .then(response => response.json())
+    .then(data => console.log(data))
+  }
   render() {
-    console.log('API KEY ===>', process.env.apiKey)
     return (
-      <div>
-        <h1 style={{ textAlign: 'center' }}>OpenWeather App</h1>
-      </div>
-    )
+    <div>
+      <h1 style={{ textAlign: 'center' }}>OpenWeather App</h1>
+      <Form />
+    </div>
+   )
   }
 }
