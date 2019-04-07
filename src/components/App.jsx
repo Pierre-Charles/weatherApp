@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { Fragment, Component } from 'react'
 import Form from './Form'
 import Weather from './Weather'
 import Location from './Location'
 
 import index from '../stylesheets/Index.scss'
 
-export default class App extends React.Component {
+export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = { 
@@ -73,10 +73,22 @@ export default class App extends React.Component {
 
   render() {
     return (
-    <div>
-      <h1>OpenWeather App</h1>
-      <h2>Your location is: {this.state.latitude} {this.state.longitude}</h2>
-      <button onClick={this.getWeathers} className='getWeather my-5'>Get weather</button>
+    <Fragment>
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-12">
+            <i onClick={this.getWeathers} className="markerClick fas fa-map-marker-alt fa-2x"></i>
+          </div>
+        </div>
+      </div>
+
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-12"></div>
+            <h2>Your location is: {this.state.latitude}, {this.state.longitude}</h2>
+        </div>
+      </div>
+
       <Form getWeather={this.getWeather}/>
       <Weather
         city={this.state.city}
@@ -86,7 +98,7 @@ export default class App extends React.Component {
         desc={this.state.desc}
         error={this.state.error}
       />
-    </div>
+    </Fragment>
    )
   }
 }
