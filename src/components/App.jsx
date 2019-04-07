@@ -20,10 +20,6 @@ export default class App extends Component {
     }
   }
 
-  componentDidMount() {
-    this.getLocation()
-  }
-
   getLocation = () => {
     const showPosition = position => {
       this.setState({ latitude: position.coords.latitude })
@@ -74,21 +70,18 @@ export default class App extends Component {
   render() {
     return (
     <Fragment>
+      <div className='main'>
       <div className="container">
         <div className="row">
           <div className="col-sm-12">
-            <i onClick={this.getWeathers} className="markerClick fas fa-map-marker-alt fa-2x"></i>
+            <i onClick={this.getLocation} className="pb-5 markerClick fas fa-map-marker-alt fa-2x"></i>
           </div>
+          <Location
+            latitude={this.state.latitude}
+            longitude={this.state.longitude}
+          />
         </div>
       </div>
-
-      <div className="container">
-        <div className="row">
-          <div className="col-sm-12"></div>
-            <h2>Your location is: {this.state.latitude}, {this.state.longitude}</h2>
-        </div>
-      </div>
-
       <Form getWeather={this.getWeather}/>
       <Weather
         city={this.state.city}
@@ -98,6 +91,7 @@ export default class App extends Component {
         desc={this.state.desc}
         error={this.state.error}
       />
+      </div>
     </Fragment>
    )
   }
