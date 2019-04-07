@@ -1,5 +1,7 @@
 import React from 'react'
 
+import '../stylesheets/Form.scss'
+
 const Form = props => (
     <form onSubmit={props.getWeather}>
       <input type="text" name='city' placeholder='City...'/>

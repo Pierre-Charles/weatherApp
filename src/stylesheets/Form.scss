@@ -1,0 +1,25 @@
+input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #FFFFFF;
+  color: #FFFFFF;
+  padding: 10px;
+  margin-right: 20px;
+}
+
+*:focus {
+  outline: none;
+}
+
+::placeholder {
+  color: #FFFFFF;
+  opacity: 1;
+}
+
+button {
+  border: 2px solid #FFFFFF;
+  color: #FFFFFF;
+  padding: 15px;
+  text-transform: uppercase;
+  background-color: transparent;
+}

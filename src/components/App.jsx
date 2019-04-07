@@ -15,8 +15,8 @@ export default class App extends React.Component {
       temp: undefined,
       desc: undefined,
       error: undefined,
-      latitude: null,
-      longitude: null
+      latitude: undefined,
+      longitude: undefined,
     }
   }
 
@@ -26,8 +26,6 @@ export default class App extends React.Component {
 
   getLocation = () => {
     const showPosition = position => {
-      console.log(position.coords.latitude)
-      console.log(position.coords.longitude)
       this.setState({ latitude: position.coords.latitude })
       this.setState({ longitude: position.coords.longitude })
     }
@@ -78,7 +76,7 @@ export default class App extends React.Component {
     <div>
       <h1>OpenWeather App</h1>
       <h2>Your location is: {this.state.latitude} {this.state.longitude}</h2>
-      <button onClick={this.getWeathers}>Get weather</button>
+      <button onClick={this.getWeathers} className='getWeather my-5'>Get weather</button>
       <Form getWeather={this.getWeather}/>
       <Weather
         city={this.state.city}

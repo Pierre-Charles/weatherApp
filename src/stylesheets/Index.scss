@@ -1,4 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   font-family: Montserrat;
-  text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(rgb(47,150,163), rgb(48,62,143));
+  color: white;
+}
+
+.getWeather {
+  border: 2px solid #FFFFFF;
+  color: #FFFFFF;
+  padding: 15px;
+  text-transform: uppercase;
+  background-color: transparent;
 }
