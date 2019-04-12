@@ -2,6 +2,7 @@ import React, { Fragment, Component } from 'react'
 import Form from './Form'
 import Weather from './Weather'
 import Location from './Location'
+import Clock from './Clock'
 
 import index from '../stylesheets/Index.scss'
 
@@ -77,9 +78,7 @@ export default class App extends Component {
     return (
     <Fragment>
       <div className='main'>
-      <div className="container">
-        <div className="row">
-          <div className="col-sm-12">
+        <Clock />
             <i onClick={this.getLocation} className="pb-5 markerClick fas fa-map-marker-alt fa-2x"></i>
           </div>
           <Location
@@ -87,8 +86,6 @@ export default class App extends Component {
             latitude={this.state.latitude}
             longitude={this.state.longitude}
           />
-        </div>
-      </div>
       <Form getWeather={this.getWeather}/>
       <Weather
         city={this.state.city}
@@ -98,7 +95,6 @@ export default class App extends Component {
         desc={this.state.desc}
         error={this.state.error}
       />
-      </div>
     </Fragment>
    )
   }
