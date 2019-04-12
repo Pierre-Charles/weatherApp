@@ -15,15 +15,21 @@ export default class App extends Component {
       temp: undefined,
       desc: undefined,
       error: undefined,
-      latitude: undefined,
-      longitude: undefined,
+      isLoading: false,
+      latitude: null,
+      longitude: null,
     }
   }
 
   getLocation = () => {
+    this.setState({ isLoading: true })
     const showPosition = position => {
       this.setState({ latitude: position.coords.latitude })
       this.setState({ longitude: position.coords.longitude })
+      if (this.state.latitude && this.state.longitude !== undefined ) {
+        this.setState({ isLoading: false })
+      }
+      this.getWeathers()
     }
 
     if (navigator.geolocation){
@@ -77,6 +83,7 @@ export default class App extends Component {
             <i onClick={this.getLocation} className="pb-5 markerClick fas fa-map-marker-alt fa-2x"></i>
           </div>
           <Location
+            isLoading={this.state.isLoading}
             latitude={this.state.latitude}
             longitude={this.state.longitude}
           />
