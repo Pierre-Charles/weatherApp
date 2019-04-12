@@ -79,7 +79,7 @@ export default class App extends Component {
     <Fragment>
       <div className='main'>
         <Clock />
-            <i onClick={this.getLocation} className="pb-5 markerClick fas fa-map-marker-alt fa-2x"></i>
+            <i onClick={this.getLocation} className="py-5 markerClick fas fa-map-marker-alt fa-2x"></i>
           </div>
           <Location
             isLoading={this.state.isLoading}
