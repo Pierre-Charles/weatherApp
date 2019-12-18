@@ -99,16 +99,6 @@ export default class App extends Component {
           temperature={this.state.temperature}
           description={this.state.description}
         />
-        <h5 style={{ paddingTop: '100px', textAlign: 'center'}} className='mt-5'>Or check the weather in another country:</h5>
-        <Form getWeather={this.getWeather} />
-        <Weather
-          city={this.state.city}
-          country={this.state.country}
-          name={this.state.name}
-          temp={this.state.temp}
-          desc={this.state.desc}
-          error={this.state.error}
-        />
       </Fragment>
     )
   }
